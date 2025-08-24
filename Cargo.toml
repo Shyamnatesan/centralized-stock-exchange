@@ -1,0 +1,19 @@
+[package]
+name = "centralized-exchange"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.8.4"
+redis = { version = "0.32.5", features = ["aio", "tokio-comp"] }
+serde = "1.0.219"
+serde_json = "1.0.143"
+tokio = { version = "1.47.1", features = ["full"] }
+futures = "0.3.31"
+
+[workspace]
+members = [
+    "matching_engine",
+    "orderbook",
+    "client"
+]
